@@ -1,0 +1,9 @@
+Table_Name,Table_Description
+lms.tm,Table for storing training module information for SOP based trainings
+lms.tm_attachment,Table for storing attachments like docs pdfs etc.. related to SOP training modules
+lms.training,Table for storing training modules information for Manage Trainings Quick Trainings party based trainings all trainings except SOP based trainings
+lms.training_attachment,Table for storing attachments like docs pdfs etc.. related to Manage Trainings Quick Trainings party based trainings all trainings except SOP based trainings
+lms.user_training,Table for storing user training information for all trainings
+masters.party,Table for storing all user information in the organization
+masters.party_role,Table for storing all user roles information in the organization
+masters.product_store,Table for storing all department names and details in the organization

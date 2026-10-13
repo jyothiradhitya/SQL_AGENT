@@ -1,0 +1,682 @@
+{
+  "total_table_nodes": 124,
+  "total_fk_records": 259,
+  "total_resolved_edges": 261,
+  "total_resolved_via_schema_tiebreak": 0,
+  "total_unresolved_edges": 24,
+  "total_ambiguous_edges": 1,
+  "total_inferred_edges": 27,
+  "total_inferred_unresolved": 60,
+  "total_inferred_ambiguous": 0,
+  "inferred_edges": [
+    {
+      "source_table": "masters.request",
+      "source_column": "request_id",
+      "target_table": "masters.request",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "masters.supplier_product",
+      "source_column": "supplier_product_id",
+      "target_table": "masters.supplier_product",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "qms.cft_assessment",
+      "source_column": "facility_id",
+      "target_table": "masters.facility",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "qms.change_control",
+      "source_column": "product_id",
+      "target_table": "masters.product",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "qms.change_control",
+      "source_column": "facility_id",
+      "target_table": "masters.facility",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "qms.change_control",
+      "source_column": "equipment_id",
+      "target_table": "masters.equipment",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "qms.change_control",
+      "source_column": "prod_route_id",
+      "target_table": "masters.prod_route",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "qms.cc_action",
+      "source_column": "facility_id",
+      "target_table": "masters.facility",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "qms.cc_document",
+      "source_column": "facility_id",
+      "target_table": "masters.facility",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "qms.cc_route_stage",
+      "source_column": "route_stage_id",
+      "target_table": "masters.route_stage",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "qms.system_parameters",
+      "source_column": "product_id",
+      "target_table": "masters.product",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "qms.system_parameters",
+      "source_column": "facility_id",
+      "target_table": "masters.facility",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.indent",
+      "source_column": "product_store_id",
+      "target_table": "masters.product_store",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.indent",
+      "source_column": "facility_id",
+      "target_table": "masters.facility",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "product_id",
+      "target_table": "masters.product",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "facility_id",
+      "target_table": "masters.facility",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "uom_id",
+      "target_table": "masters.uom",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.indent_item",
+      "source_column": "product_id",
+      "target_table": "masters.product",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.item_issuance",
+      "source_column": "facility_id",
+      "target_table": "masters.facility",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.item_issuance",
+      "source_column": "equipment_id",
+      "target_table": "masters.equipment",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.mm_attachment",
+      "source_column": "content_type_id",
+      "target_table": "qms.content_type",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.returns",
+      "source_column": "party_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.return_item",
+      "source_column": "product_id",
+      "target_table": "masters.product",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.sample",
+      "source_column": "equipment_id",
+      "target_table": "masters.equipment",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.shipment_receipt",
+      "source_column": "product_id",
+      "target_table": "masters.product",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.shipment_receipt",
+      "source_column": "product_store_id",
+      "target_table": "masters.product_store",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "mm.weight_variation_config",
+      "source_column": "equipment_id",
+      "target_table": "masters.equipment",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    }
+  ],
+  "inferred_unresolved": [
+    {
+      "source_table": "masters.checklist_entry",
+      "source_column": "entry_id",
+      "attempted_bare_name": "entry"
+    },
+    {
+      "source_table": "masters.custom_sequence_generator",
+      "source_column": "ctp_id",
+      "attempted_bare_name": "ctp"
+    },
+    {
+      "source_table": "masters.facility",
+      "source_column": "facility_group_id",
+      "attempted_bare_name": "facility_group"
+    },
+    {
+      "source_table": "masters.facility",
+      "source_column": "qr_code_id",
+      "attempted_bare_name": "qr_code"
+    },
+    {
+      "source_table": "masters.equipment",
+      "source_column": "start_freq_id",
+      "attempted_bare_name": "start_freq"
+    },
+    {
+      "source_table": "masters.equipment",
+      "source_column": "alert_freq_id",
+      "attempted_bare_name": "alert_freq"
+    },
+    {
+      "source_table": "masters.equipment",
+      "source_column": "val_alert_freq_id",
+      "attempted_bare_name": "val_alert_freq"
+    },
+    {
+      "source_table": "masters.equipment",
+      "source_column": "pm_alert_freq_id",
+      "attempted_bare_name": "pm_alert_freq"
+    },
+    {
+      "source_table": "masters.equipment",
+      "source_column": "stability_condition_id",
+      "attempted_bare_name": "stability_condition"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "employee_id",
+      "attempted_bare_name": "employee"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "session_id",
+      "attempted_bare_name": "session"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "reset_by_user_id",
+      "attempted_bare_name": "reset_by_user"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "user_id",
+      "attempted_bare_name": "user"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "preferred_language_id",
+      "attempted_bare_name": "preferred_language"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "gender_id",
+      "attempted_bare_name": "gender"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "qr_code_id",
+      "attempted_bare_name": "qr_code"
+    },
+    {
+      "source_table": "masters.party_contact_mech",
+      "source_column": "contact_mech_purpose_id",
+      "attempted_bare_name": "contact_mech_purpose"
+    },
+    {
+      "source_table": "masters.postal_address",
+      "source_column": "geo_point_id",
+      "attempted_bare_name": "geo_point"
+    },
+    {
+      "source_table": "masters.product_store_user_group",
+      "source_column": "user_group_id",
+      "attempted_bare_name": "user_group"
+    },
+    {
+      "source_table": "masters.user_security_group",
+      "source_column": "user_group_id",
+      "attempted_bare_name": "user_group"
+    },
+    {
+      "source_table": "lms.lms_system_parameters",
+      "source_column": "dept_id",
+      "attempted_bare_name": "dept"
+    },
+    {
+      "source_table": "lms.lms_system_parameters",
+      "source_column": "training_id",
+      "attempted_bare_name": "training"
+    },
+    {
+      "source_table": "pc.sys_user",
+      "source_column": "emp_id",
+      "attempted_bare_name": "emp"
+    },
+    {
+      "source_table": "qms.cft_assessment",
+      "source_column": "department_id",
+      "attempted_bare_name": "department"
+    },
+    {
+      "source_table": "qms.cft_assessment",
+      "source_column": "user_id",
+      "attempted_bare_name": "user"
+    },
+    {
+      "source_table": "qms.cc_action_history",
+      "source_column": "user_id",
+      "attempted_bare_name": "user"
+    },
+    {
+      "source_table": "qms.change_control",
+      "source_column": "department_id",
+      "attempted_bare_name": "department"
+    },
+    {
+      "source_table": "qms.change_control",
+      "source_column": "ctp_id",
+      "attempted_bare_name": "ctp"
+    },
+    {
+      "source_table": "qms.reference_item",
+      "source_column": "user_id",
+      "attempted_bare_name": "user"
+    },
+    {
+      "source_table": "qms.cc_document_history",
+      "source_column": "user_id",
+      "attempted_bare_name": "user"
+    },
+    {
+      "source_table": "qms.cft_assessment_history",
+      "source_column": "user_id",
+      "attempted_bare_name": "user"
+    },
+    {
+      "source_table": "qms.cc_action",
+      "source_column": "user_id",
+      "attempted_bare_name": "user"
+    },
+    {
+      "source_table": "qms.cc_action",
+      "source_column": "department_id",
+      "attempted_bare_name": "department"
+    },
+    {
+      "source_table": "qms.cc_document",
+      "source_column": "user_id",
+      "attempted_bare_name": "user"
+    },
+    {
+      "source_table": "qms.cc_document",
+      "source_column": "department_id",
+      "attempted_bare_name": "department"
+    },
+    {
+      "source_table": "qms.change_control_history",
+      "source_column": "user_id",
+      "attempted_bare_name": "user"
+    },
+    {
+      "source_table": "qms.cc_attachment",
+      "source_column": "ccra_id",
+      "attempted_bare_name": "ccra"
+    },
+    {
+      "source_table": "qms.system_parameters",
+      "source_column": "department_id",
+      "attempted_bare_name": "department"
+    },
+    {
+      "source_table": "mm.indent",
+      "source_column": "from_party_id",
+      "attempted_bare_name": "from_party"
+    },
+    {
+      "source_table": "mm.indent",
+      "source_column": "sales_channel_id",
+      "attempted_bare_name": "sales_channel"
+    },
+    {
+      "source_table": "mm.indent",
+      "source_column": "currency_uom_id",
+      "attempted_bare_name": "currency_uom"
+    },
+    {
+      "source_table": "mm.indent",
+      "source_column": "indent_category_id",
+      "attempted_bare_name": "indent_category"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "container_id",
+      "attempted_bare_name": "container"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "owner_party_id",
+      "attempted_bare_name": "owner_party"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "currency_uom_id",
+      "attempted_bare_name": "currency_uom"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "supplier_id",
+      "attempted_bare_name": "supplier"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "manufacture_id",
+      "attempted_bare_name": "manufacture"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "location_id",
+      "attempted_bare_name": "location"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "lot_id",
+      "attempted_bare_name": "lot"
+    },
+    {
+      "source_table": "mm.inventory_item",
+      "source_column": "facility_location_id",
+      "attempted_bare_name": "facility_location"
+    },
+    {
+      "source_table": "mm.indent_item",
+      "source_column": "ref_product_id",
+      "attempted_bare_name": "ref_product"
+    },
+    {
+      "source_table": "mm.indent_item",
+      "source_column": "dispensing_uom_id",
+      "attempted_bare_name": "dispensing_uom"
+    },
+    {
+      "source_table": "mm.inventory_item_variance",
+      "source_column": "reason_id",
+      "attempted_bare_name": "reason"
+    },
+    {
+      "source_table": "mm.item_issuance",
+      "source_column": "variance_reason_id",
+      "attempted_bare_name": "variance_reason"
+    },
+    {
+      "source_table": "mm.mm_request",
+      "source_column": "reviewed_by_party_id",
+      "attempted_bare_name": "reviewed_by_party"
+    },
+    {
+      "source_table": "mm.mm_request",
+      "source_column": "approved_by_party_id",
+      "attempted_bare_name": "approved_by_party"
+    },
+    {
+      "source_table": "mm.sample",
+      "source_column": "container_id",
+      "attempted_bare_name": "container"
+    },
+    {
+      "source_table": "mm.shipment_receipt",
+      "source_column": "reason_id",
+      "attempted_bare_name": "reason"
+    },
+    {
+      "source_table": "mm.shipment_receipt_status",
+      "source_column": "reason_id",
+      "attempted_bare_name": "reason"
+    },
+    {
+      "source_table": "mm.status",
+      "source_column": "category_id",
+      "attempted_bare_name": "category"
+    }
+  ],
+  "inferred_ambiguous": [],
+  "tables_zero_relationships": [
+    "lms.exam_type",
+    "lms.log_type",
+    "lms.tm_type",
+    "lms.training_type",
+    "masters.product_assoc_type"
+  ],
+  "tables_incoming_only": [
+    "lms.status_category",
+    "lms.training_category",
+    "masters.checklist_entry_name",
+    "masters.contact_mech_type",
+    "masters.equipment_type",
+    "masters.facility_type",
+    "masters.geo_type",
+    "masters.mod",
+    "masters.party_type",
+    "masters.product_category_type",
+    "masters.product_store_type",
+    "masters.product_type",
+    "masters.request_type",
+    "masters.role_type",
+    "masters.status_category",
+    "masters.sys_persistent_audit_event",
+    "masters.type",
+    "masters.uom_type",
+    "mm.inventory_item_type",
+    "mm.mm_request_type",
+    "mm.status",
+    "mm.sys_persistent_audit_event",
+    "pc.sys_authority",
+    "pc.sys_user",
+    "qms.cc_type_category",
+    "qms.change_category",
+    "qms.content_type",
+    "qms.dashboard_stage",
+    "qms.item_category",
+    "qms.item_sub_category",
+    "qms.status_category",
+    "qms.sys_persistent_audit_event"
+  ],
+  "tables_outgoing_only": [
+    "lms.lms_system_parameters",
+    "lms.status",
+    "masters.bom",
+    "masters.checklist_entry",
+    "masters.checklist_history",
+    "masters.custom_sequence_generator",
+    "masters.facility_equipment",
+    "masters.facility_history",
+    "masters.facility_product",
+    "masters.facility_usage_log",
+    "masters.job_code",
+    "masters.party_contact_mech",
+    "masters.party_role",
+    "masters.postal_address",
+    "masters.product_category_attr",
+    "masters.product_history",
+    "masters.product_route_assoc",
+    "masters.product_store_user_group",
+    "masters.request_history",
+    "masters.route_history",
+    "masters.security_group_permission",
+    "masters.stage_history",
+    "masters.sys_persistent_audit_evt_data",
+    "masters.system_parameters",
+    "masters.user_security_group",
+    "mm.inventory_item_attr",
+    "mm.inventory_item_delegate",
+    "mm.mm_request_history",
+    "mm.return_attachment",
+    "mm.sample_attachment",
+    "mm.shipment_receipt_attr",
+    "mm.shipment_receipt_status",
+    "mm.sys_persistent_audit_evt_data",
+    "mm.weight_variation_config",
+    "pc.sys_user_authority",
+    "qms.cc_action_history",
+    "qms.cc_attachment",
+    "qms.cc_document_history",
+    "qms.cc_route_stage",
+    "qms.cft_assessment_history",
+    "qms.dashboard_stage_config",
+    "qms.status_valid_change",
+    "qms.sys_persistent_audit_evt_data",
+    "qms.system_parameters"
+  ],
+  "tables_both_directions": [
+    "masters.checklist",
+    "masters.checklist_type",
+    "masters.contact_mech",
+    "masters.equipment",
+    "masters.facility",
+    "masters.geo",
+    "masters.party",
+    "masters.permission",
+    "masters.prod_route",
+    "masters.product",
+    "masters.product_category",
+    "masters.product_mfg_config",
+    "masters.product_store",
+    "masters.request",
+    "masters.route_stage",
+    "masters.security_group",
+    "masters.stage",
+    "masters.status",
+    "masters.supplier_product",
+    "masters.uom",
+    "mm.indent",
+    "mm.indent_item",
+    "mm.indent_type",
+    "mm.inventory_item",
+    "mm.inventory_item_variance",
+    "mm.inventory_transfer",
+    "mm.item_issuance",
+    "mm.mm_attachment",
+    "mm.mm_request",
+    "mm.return_item",
+    "mm.returns",
+    "mm.sample",
+    "mm.shipment_receipt",
+    "mm.weight_verification",
+    "qms.attachment",
+    "qms.cc_action",
+    "qms.cc_document",
+    "qms.cc_type",
+    "qms.cft_assessment",
+    "qms.change_control",
+    "qms.change_control_history",
+    "qms.reference_item",
+    "qms.status"
+  ],
+  "duplicate_fk_edges": [],
+  "self_referencing_fk_edges": [
+    {
+      "source_table": "masters.facility",
+      "source_column": "parent_id",
+      "target_table": "masters.facility",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.product_category",
+      "source_column": "parent_id",
+      "target_table": "masters.product_category",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.product_store",
+      "source_column": "parent_id",
+      "target_table": "masters.product_store",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "mm.indent_type",
+      "source_column": "parent_id",
+      "target_table": "mm.indent_type",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.request",
+      "source_column": "request_id",
+      "target_table": "masters.request",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "masters.supplier_product",
+      "source_column": "supplier_product_id",
+      "target_table": "masters.supplier_product",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+hello
+List all request types
+List all training categories
+List all trainings along with their training category name
+How many users are there in the system
+exit

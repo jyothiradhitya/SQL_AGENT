@@ -1,0 +1,16 @@
+Table_Name1: lms.tm
+Table_Description1: Table for storing training module information for SOP based trainings 
+Table_Name2: lms.tm_attachment
+Table_Description2: Table for storing attachments like docs pdfs etc.. related to SOP training modules
+Table_Name3: lms.training
+Table_Description3: Table for storing training modules information for Manage Trainings Quick Trainings party based trainings all trainings except SOP based trainings
+Table_Name4: lms.training_attachment
+Table_Description4: Table for storing attachments like docs pdfs etc.. related to Manage Trainings Quick Trainings party based trainings all trainings except SOP based trainings
+Table_Name5: lms.user_training
+Table_Description5: Table for storing user training information for all trainings
+Table_Name6: masters.party
+Table_Description6: Table for storing all user information in the organization 
+Table_Name7: masters.party_role
+Table_Description7: Table for storing all user roles information in the organization
+Table_Name8: masters.product_store
+Table_Description8: Table for storing all department names and details in the organization

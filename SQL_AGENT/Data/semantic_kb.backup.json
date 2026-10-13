@@ -1,0 +1,604 @@
+{
+  "tables": [
+    {
+      "business_name": "BOM line item",
+      "business_meaning": "Each row defines a component product, its required quantity, unit of measure, and related metadata needed to assemble or manufacture a parent product.",
+      "business_terms": [
+        "component",
+        "assembly",
+        "quantity",
+        "unit of measure",
+        "manufacturing configuration"
+      ],
+      "aliases": [
+        "BOM entry",
+        "component record",
+        "assembly component"
+      ],
+      "likely_user_phrases": [
+        "What components are needed for product 26433?",
+        "Show me the BOM for product 26212",
+        "How many units of component 26212 are required?",
+        "List the BOM entries for product 26433"
+      ],
+      "related_business_concepts": [
+        "Product",
+        "Unit of Measure",
+        "Manufacturing Configuration",
+        "Status",
+        "Component"
+      ],
+      "evidence": [
+        "product_id references product table",
+        "ref_product_id references product table",
+        "quantity numeric(21,2)",
+        "uom_id foreign key to uom",
+        "prod_mfg_config_id foreign key to product_mfg_config",
+        "status_id foreign key to status"
+      ],
+      "confidence": 90.0,
+      "schema_name": "masters",
+      "table_name": "bom",
+      "qualified_name": "masters.bom",
+      "foreign_keys": [
+        {
+          "column": "dispensing_uom_id",
+          "references_table": "masters.uom",
+          "references_column": "id"
+        },
+        {
+          "column": "prod_mfg_config_id",
+          "references_table": "masters.product_mfg_config",
+          "references_column": "id"
+        },
+        {
+          "column": "product_id",
+          "references_table": "masters.product",
+          "references_column": "id"
+        },
+        {
+          "column": "ref_product_id",
+          "references_table": "masters.product",
+          "references_column": "id"
+        },
+        {
+          "column": "status_id",
+          "references_table": "masters.status",
+          "references_column": "id"
+        },
+        {
+          "column": "uom_id",
+          "references_table": "masters.uom",
+          "references_column": "id"
+        }
+      ]
+    },
+    {
+      "business_name": "Checklist Item Assessment",
+      "business_meaning": "The table stores individual assessment records for items within a checklist, capturing the answer, comments, dates, status, and the parties involved. Each row represents one checklist item’s evaluation for a specific checklist instance.",
+      "business_terms": [
+        "Checklist Item",
+        "Assessment Record",
+        "Compliance Check",
+        "Audit Entry",
+        "Verification Item"
+      ],
+      "aliases": [
+        "Checklist Item Record",
+        "Audit Entry",
+        "Compliance Item"
+      ],
+      "likely_user_phrases": [
+        "What is the status of checklist item 1701?",
+        "Show me the assessment details for entry 8701.",
+        "When was checklist item 8351 completed?",
+        "Who assessed checklist entry 8701?"
+      ],
+      "related_business_concepts": [
+        "Checklist",
+        "Audit",
+        "Compliance",
+        "Assessment",
+        "Party"
+      ],
+      "evidence": [
+        "id, entry_id, checkpoint, ans, remarks, assessment_date, target_date, completed_date, data, created_by, created_date, last_modified_by, last_modified_date, entry_name_id, checklist_id, status_id, assessed_by_id"
+      ],
+      "confidence": 90.0,
+      "schema_name": "masters",
+      "table_name": "checklist_entry",
+      "qualified_name": "masters.checklist_entry",
+      "foreign_keys": [
+        {
+          "column": "assessed_by_id",
+          "references_table": "masters.party",
+          "references_column": "id"
+        },
+        {
+          "column": "checklist_id",
+          "references_table": "masters.checklist",
+          "references_column": "id"
+        },
+        {
+          "column": "entry_name_id",
+          "references_table": "masters.checklist_entry_name",
+          "references_column": "id"
+        },
+        {
+          "column": "status_id",
+          "references_table": "masters.status",
+          "references_column": "id"
+        }
+      ]
+    },
+    {
+      "business_name": "Receiving Checklist Item",
+      "business_meaning": "A single verification question in a procurement or receiving checklist that confirms material compliance with purchase orders, supplier approvals, and manufacturer approvals, along with metadata about its creation and status.",
+      "business_terms": [
+        "checklist item",
+        "procurement verification",
+        "material compliance",
+        "approval step",
+        "receiving process"
+      ],
+      "aliases": [
+        "Checklist question",
+        "Verification step",
+        "Receiving check",
+        "Procurement check"
+      ],
+      "likely_user_phrases": [
+        "What does this checklist item ask?",
+        "Who approved this checklist item?",
+        "When was this checklist item last modified?",
+        "What is the status of this checklist item?"
+      ],
+      "related_business_concepts": [
+        "Purchase Order",
+        "Supplier Approval",
+        "Manufacturer Approval",
+        "Receiving",
+        "Quality Control"
+      ],
+      "evidence": [
+        "description contains 'Does the material correspond to the Purchase Order?'",
+        "remarks field shows 'Approve'",
+        "type_id references checklist_type table",
+        "status_id references status table",
+        "created_by and last_modified_by fields track user actions",
+        "name holds numeric order '1', '2', '3'"
+      ],
+      "confidence": 90.0,
+      "schema_name": "masters",
+      "table_name": "checklist",
+      "qualified_name": "masters.checklist",
+      "foreign_keys": [
+        {
+          "column": "department_id",
+          "references_table": "masters.product_store",
+          "references_column": "id"
+        },
+        {
+          "column": "facility_id",
+          "references_table": "masters.facility",
+          "references_column": "id"
+        },
+        {
+          "column": "status_id",
+          "references_table": "masters.status",
+          "references_column": "id"
+        },
+        {
+          "column": "type_id",
+          "references_table": "masters.checklist_type",
+          "references_column": "id"
+        }
+      ]
+    },
+    {
+      "business_name": "Checklist Type Definition",
+      "business_meaning": "The table stores definitions of checklist templates used in the organization; each row represents a distinct checklist type with its metadata, validity period, and status.",
+      "business_terms": [
+        "Checklist Template",
+        "Process Checklist",
+        "Compliance Checklist",
+        "Inspection Checklist",
+        "Audit Checklist"
+      ],
+      "aliases": [
+        "Checklist Category",
+        "Checklist Definition",
+        "Checklist Template",
+        "Checklist Type"
+      ],
+      "likely_user_phrases": [
+        "What are the available checklist types?",
+        "Show me the details of the Pre Inspection Checklist",
+        "Which checklists are active right now?",
+        "How do I add a new checklist type?"
+      ],
+      "related_business_concepts": [
+        "Process Management",
+        "Quality Assurance",
+        "Compliance",
+        "Audit",
+        "Inspection"
+      ],
+      "evidence": [
+        "name column contains 'PRE_INSPECTION_CHECKLIST'",
+        "from_date indicates validity period",
+        "status_id foreign key to status table",
+        "type_id foreign key to type table"
+      ],
+      "confidence": 90.0,
+      "schema_name": "masters",
+      "table_name": "checklist_type",
+      "qualified_name": "masters.checklist_type",
+      "foreign_keys": [
+        {
+          "column": "status_id",
+          "references_table": "masters.status",
+          "references_column": "id"
+        },
+        {
+          "column": "type_id",
+          "references_table": "masters.type",
+          "references_column": "id"
+        }
+      ]
+    },
+    {
+      "business_name": "Checklist status change record",
+      "business_meaning": "Each row records a transition of a checklist from one status to another, capturing who made the change, when it occurred, and any associated comments or data.",
+      "business_terms": [
+        "Checklist status change",
+        "Audit trail",
+        "Workflow transition",
+        "Change log",
+        "Status history"
+      ],
+      "aliases": [
+        "Checklist change log",
+        "Checklist audit record",
+        "Checklist transition record"
+      ],
+      "likely_user_phrases": [
+        "When did checklist 8367 change status?",
+        "Show me the status history for checklist 8367",
+        "Who updated checklist 8367 to status X?",
+        "What comments were added when checklist 8367 moved from status 1 to status 2?"
+      ],
+      "related_business_concepts": [
+        "Checklist",
+        "Status",
+        "Audit trail",
+        "Workflow",
+        "Change log"
+      ],
+      "evidence": [
+        "Foreign key checklist_id links to public.checklist",
+        "from_status_id and to_status_id reference public.status",
+        "created_by and created_date record the initiator and timestamp",
+        "last_modified_by and last_modified_date record subsequent edits"
+      ],
+      "confidence": 90.0,
+      "schema_name": "masters",
+      "table_name": "checklist_history",
+      "qualified_name": "masters.checklist_history",
+      "foreign_keys": [
+        {
+          "column": "checklist_id",
+          "references_table": "masters.checklist",
+          "references_column": "id"
+        },
+        {
+          "column": "from_status_id",
+          "references_table": "masters.status",
+          "references_column": "id"
+        },
+        {
+          "column": "to_status_id",
+          "references_table": "masters.status",
+          "references_column": "id"
+        }
+      ]
+    },
+    {
+      "business_name": "Contact Method",
+      "business_meaning": "A record that stores a specific way to contact an entity—such as an email address, phone number, or physical address—along with metadata about who created or last modified it.",
+      "business_terms": [
+        "Contact Detail",
+        "Communication Channel",
+        "Contact Information",
+        "Contact Mechanism",
+        "Contact Entry"
+      ],
+      "aliases": [
+        "Contact Detail",
+        "Contact Info",
+        "Contact Channel"
+      ],
+      "likely_user_phrases": [
+        "What contact methods do we have for customer X?",
+        "Show me the email addresses for supplier Y",
+        "List all phone numbers for employee Z",
+        "Where can I reach the vendor?",
+        "Retrieve the contact details for account 12345"
+      ],
+      "related_business_concepts": [
+        "Customer",
+        "Supplier",
+        "Employee",
+        "Address Book",
+        "Communication Channels"
+      ],
+      "evidence": [
+        "Table name contact_mech indicates a contact mechanism",
+        "info_string column likely holds the actual contact detail",
+        "contact_mech_type_id foreign key references contact_mech_type table",
+        "created_by and last_modified_by columns track user actions"
+      ],
+      "confidence": 90.0,
+      "schema_name": "masters",
+      "table_name": "contact_mech",
+      "qualified_name": "masters.contact_mech",
+      "foreign_keys": [
+        {
+          "column": "contact_mech_type_id",
+          "references_table": "masters.contact_mech_type",
+          "references_column": "id"
+        }
+      ]
+    },
+    {
+      "business_name": "Checklist Entry Type",
+      "business_meaning": "Defines a type of checklist item that can be used in inspection or audit processes, including its name and description.",
+      "business_terms": [
+        "checklist item",
+        "inspection step",
+        "audit task",
+        "quality control step",
+        "process task"
+      ],
+      "aliases": [
+        "Checklist Item",
+        "Inspection Step",
+        "Audit Item"
+      ],
+      "likely_user_phrases": [
+        "What are the available checklist items?",
+        "Show me the description for PRE_INSPECTION",
+        "List all inspection steps",
+        "How do I add a new checklist entry?"
+      ],
+      "related_business_concepts": [
+        "Inspection Process",
+        "Quality Assurance",
+        "Audit Trail",
+        "Process Workflow",
+        "Compliance Check"
+      ],
+      "evidence": [
+        "Row shows name PRE_INSPECTION and description Pre Inspection",
+        "Columns include created_by and timestamps indicating record creation and modification",
+        "Primary key id identifies each checklist entry"
+      ],
+      "confidence": 90.0,
+      "schema_name": "masters",
+      "table_name": "checklist_entry_name",
+      "qualified_name": "masters.checklist_entry_name",
+      "foreign_keys": []
+    },
+    {
+      "business_name": "GRN Number Sequence Configuration",
+      "business_meaning": "The table holds the configuration and current state for generating custom sequence numbers, such as Goods Received Note (GRN) numbers. Each row defines the format (prefix, postfix, pattern, attributes) and tracks the next value to use for that sequence type.",
+      "business_terms": [
+        "sequence generator",
+        "Goods Received Note",
+        "custom numbering",
+        "prefix",
+        "sequence value"
+      ],
+      "aliases": [
+        "GRN Sequence Config",
+        "Custom Sequence Definition",
+        "Numbering Rule"
+      ],
+      "likely_user_phrases": [
+        "How do I get the next GRN number?",
+        "What is the current sequence value for GRN numbers?",
+        "Where is the GRN number format stored?",
+        "How to update the GRN number prefix?"
+      ],
+      "related_business_concepts": [
+        "Inventory receiving",
+        "Goods Received Note",
+        "Numbering scheme",
+        "Sequence management",
+        "Product identification"
+      ],
+      "evidence": [
+        "type column shows GRN_NUMBER indicating Goods Received Note",
+        "prefix RM suggests a prefix for the number",
+        "attr_1 21 and attr_2 07 likely represent year and month",
+        "value 1 indicates the next sequence value",
+        "remarks 250721 looks like a date or last generated number",
+        "ctp_id and product_id FK allow linking to time period or product"
+      ],
+      "confidence": 90.0,
+      "schema_name": "masters",
+      "table_name": "custom_sequence_generator",
+      "qualified_name": "masters.custom_sequence_generator",
+      "foreign_keys": [
+        {
+          "column": "ctp_id",
+          "references_table": "masters.custom_time_period",
+          "references_column": "id"
+        },
+        {
+          "column": "product_id",
+          "references_table": "masters.product",
+          "references_column": "id"
+        }
+      ]
+    },
+    {
+      "business_name": "Contact Mechanism Type",
+      "business_meaning": "Defines the categories of contact information that can be stored for a person or entity, such as email, phone number, or postal address.",
+      "business_terms": [
+        "contact method",
+        "communication channel",
+        "address type",
+        "email",
+        "phone",
+        "postal address"
+      ],
+      "aliases": [
+        "Contact Method",
+        "Contact Channel",
+        "Contact Type"
+      ],
+      "likely_user_phrases": [
+        "What contact methods are available?",
+        "Show me the list of contact types",
+        "How many contact mechanism types exist?",
+        "What is the description for the email contact type?"
+      ],
+      "related_business_concepts": [
+        "Contact Information",
+        "Customer Profile",
+        "Address Book",
+        "Communication Preferences",
+        "Data Model"
+      ],
+      "evidence": [
+        "id 1 name EMAIL description Email",
+        "id 2 name PHONE_NUMBER description Phone Number",
+        "id 3 name POSTAL_ADDRESS description Postal Address",
+        "unique constraint on name ensures distinct contact types"
+      ],
+      "confidence": 95.0,
+      "schema_name": "masters",
+      "table_name": "contact_mech_type",
+      "qualified_name": "masters.contact_mech_type",
+      "foreign_keys": []
+    },
+    {
+      "business_name": "Equipment Type",
+      "business_meaning": "A record that defines a category of equipment, including its name and description, used for classification and inventory purposes.",
+      "business_terms": [
+        "Equipment Category",
+        "Equipment Type",
+        "Equipment Class",
+        "Equipment Group",
+        "Equipment Specification"
+      ],
+      "aliases": [
+        "Equipment Category",
+        "Equipment Class",
+        "Equipment Group"
+      ],
+      "likely_user_phrases": [
+        "What equipment types are available?",
+        "Show me the list of equipment categories",
+        "Add a new equipment type",
+        "Find equipment type by name"
+      ],
+      "related_business_concepts": [
+        "Equipment Inventory",
+        "Asset Management",
+        "Maintenance Scheduling",
+        "Procurement",
+        "Lab Equipment"
+      ],
+      "evidence": [
+        "Row shows name WEIGHING_BALANCE and description weighing balance",
+        "Unique constraint on name ensures each type is distinct",
+        "Created_by and timestamps indicate record creation and updates"
+      ],
+      "confidence": 90.0,
+      "schema_name": "masters",
+      "table_name": "equipment_type",
+      "qualified_name": "masters.equipment_type",
+      "foreign_keys": []
+    },
+    {
+      "business_name": "Facility Definition",
+      "business_meaning": "The facility table stores metadata about physical or logical facilities used in the supply chain, such as quarantine areas, analysis labs, and stock approval points. Each row represents a single facility, including its name, type, status, and relationships to other entities.",
+      "business_terms": [
+        "facility",
+        "location",
+        "status",
+        "type",
+        "hierarchy",
+        "QR code"
+      ],
+      "aliases": [
+        "Facility",
+        "Location",
+        "Site",
+        "Warehouse"
+      ],
+      "likely_user_phrases": [
+        "What facilities are available for quarantine?",
+        "Show me the status of the stock approval facility",
+        "List all facilities in the product store",
+        "What is the parent facility of the analysis lab?"
+      ],
+      "related_business_concepts": [
+        "Product Store",
+        "Facility Type",
+        "Facility Group",
+        "Status",
+        "QR Code"
+      ],
+      "evidence": [
+        "Name column contains 'QUARANTINE', 'UNDER_ANALYSIS', 'STOCK_APPROVED'",
+        "facility_type_id references facility_type table",
+        "product_store_id references product_store table",
+        "status_id references status table"
+      ],
+      "confidence": 90.0,
+      "schema_name": "masters",
+      "table_name": "facility",
+      "qualified_name": "masters.facility",
+      "foreign_keys": [
+        {
+          "column": "facility_group_id",
+          "references_table": "masters.facility_group",
+          "references_column": "id"
+        },
+        {
+          "column": "facility_type_id",
+          "references_table": "masters.facility_type",
+          "references_column": "id"
+        },
+        {
+          "column": "parent_id",
+          "references_table": "masters.facility",
+          "references_column": "id"
+        },
+        {
+          "column": "party_id",
+          "references_table": "masters.party",
+          "references_column": "id"
+        },
+        {
+          "column": "product_store_id",
+          "references_table": "masters.product_store",
+          "references_column": "id"
+        },
+        {
+          "column": "qr_code_id",
+          "references_table": "masters.qr_code",
+          "references_column": "id"
+        },
+        {
+          "column": "status_id",
+          "references_table": "masters.status",
+          "references_column": "id"
+        }
+      ]
+    }
+  ]
+}

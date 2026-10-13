@@ -1,0 +1,21 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Editors
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs / scratch test output
+*.log
+
+# Generated / derived data (rebuild with lms_chatbot.retrieval.build_index)
+lms_chatbot/data/table_embeddings.json
+logs/

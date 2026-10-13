@@ -1,0 +1,222 @@
+{
+  "total_table_nodes": 49,
+  "total_fk_records": 81,
+  "total_resolved_edges": 73,
+  "total_resolved_via_schema_tiebreak": 18,
+  "total_unresolved_edges": 10,
+  "total_ambiguous_edges": 0,
+  "total_inferred_edges": 2,
+  "total_inferred_unresolved": 25,
+  "total_inferred_ambiguous": 0,
+  "inferred_edges": [
+    {
+      "source_table": "lms.tm_job_code",
+      "source_column": "job_code_id",
+      "target_table": "masters.job_code",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "lms.exam",
+      "source_column": "party_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    }
+  ],
+  "inferred_unresolved": [
+    {
+      "source_table": "masters.party",
+      "source_column": "employee_id",
+      "attempted_bare_name": "employee"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "session_id",
+      "attempted_bare_name": "session"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "reset_by_user_id",
+      "attempted_bare_name": "reset_by_user"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "preferred_language_id",
+      "attempted_bare_name": "preferred_language"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "gender_id",
+      "attempted_bare_name": "gender"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "qr_code_id",
+      "attempted_bare_name": "qr_code"
+    },
+    {
+      "source_table": "masters.product_store_user_group",
+      "source_column": "user_group_id",
+      "attempted_bare_name": "user_group"
+    },
+    {
+      "source_table": "masters.leave",
+      "source_column": "type_id",
+      "attempted_bare_name": "type"
+    },
+    {
+      "source_table": "masters.system_parameters",
+      "source_column": "product_id",
+      "attempted_bare_name": "product"
+    },
+    {
+      "source_table": "masters.user_security_group",
+      "source_column": "user_group_id",
+      "attempted_bare_name": "user_group"
+    },
+    {
+      "source_table": "lms.lms_system_parameters",
+      "source_column": "dept_id",
+      "attempted_bare_name": "dept"
+    },
+    {
+      "source_table": "lms.training",
+      "source_column": "dept_id",
+      "attempted_bare_name": "dept"
+    },
+    {
+      "source_table": "lms.training",
+      "source_column": "qr_code_id",
+      "attempted_bare_name": "qr_code"
+    },
+    {
+      "source_table": "lms.training_attachment",
+      "source_column": "ext_id",
+      "attempted_bare_name": "ext"
+    },
+    {
+      "source_table": "lms.tm",
+      "source_column": "dept_id",
+      "attempted_bare_name": "dept"
+    },
+    {
+      "source_table": "lms.training_session",
+      "source_column": "trainer_id",
+      "attempted_bare_name": "trainer"
+    },
+    {
+      "source_table": "lms.training_session",
+      "source_column": "facility_id",
+      "attempted_bare_name": "facility"
+    },
+    {
+      "source_table": "lms.training_session",
+      "source_column": "ut_id",
+      "attempted_bare_name": "ut"
+    },
+    {
+      "source_table": "lms.training_session",
+      "source_column": "ts_type_id",
+      "attempted_bare_name": "ts_type"
+    },
+    {
+      "source_table": "lms.user_training",
+      "source_column": "emp_id",
+      "attempted_bare_name": "emp"
+    },
+    {
+      "source_table": "lms.tm_attachment",
+      "source_column": "ext_id",
+      "attempted_bare_name": "ext"
+    },
+    {
+      "source_table": "lms.training_session_register",
+      "source_column": "trainee_id",
+      "attempted_bare_name": "trainee"
+    },
+    {
+      "source_table": "lms.time_logs",
+      "source_column": "type_id",
+      "attempted_bare_name": "type"
+    },
+    {
+      "source_table": "lms.time_logs",
+      "source_column": "training_tm_session_id",
+      "attempted_bare_name": "training_tm_session"
+    },
+    {
+      "source_table": "pc.sys_user",
+      "source_column": "emp_id",
+      "attempted_bare_name": "emp"
+    }
+  ],
+  "inferred_ambiguous": [],
+  "tables_zero_relationships": [
+    "lms.time_logs",
+    "masters.contact_mech_type"
+  ],
+  "tables_incoming_only": [
+    "lms.exam_type",
+    "lms.lms_attachment",
+    "lms.status_category",
+    "lms.sys_persistent_audit_event",
+    "lms.tm_type",
+    "lms.training_category",
+    "lms.training_type",
+    "masters.mod",
+    "masters.party_type",
+    "masters.product_store_type",
+    "masters.request_type",
+    "masters.role_type",
+    "masters.status_category",
+    "masters.sys_persistent_audit_event",
+    "pc.sys_authority",
+    "pc.sys_user"
+  ],
+  "tables_outgoing_only": [
+    "lms.exam",
+    "lms.lms_system_parameters",
+    "lms.sys_persistent_audit_evt_data",
+    "lms.tm_attachment",
+    "lms.tm_job_code",
+    "lms.training_attachment",
+    "lms.training_schedule",
+    "lms.training_session_register",
+    "masters.leave",
+    "masters.party_job_code",
+    "masters.party_role",
+    "masters.product_store_user_group",
+    "masters.request_history",
+    "masters.security_group_permission",
+    "masters.sys_persistent_audit_evt_data",
+    "masters.system_parameters",
+    "masters.user_security_group",
+    "pc.sys_user_authority"
+  ],
+  "tables_both_directions": [
+    "lms.status",
+    "lms.tm",
+    "lms.training",
+    "lms.training_session",
+    "lms.training_tm",
+    "lms.user_training",
+    "masters.job_code",
+    "masters.party",
+    "masters.permission",
+    "masters.product_store",
+    "masters.request",
+    "masters.security_group",
+    "masters.status"
+  ],
+  "duplicate_fk_edges": [],
+  "self_referencing_fk_edges": [
+    {
+      "source_table": "masters.product_store",
+      "source_column": "parent_id",
+      "target_table": "masters.product_store",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    }
+  ]
+}

@@ -1,0 +1,3089 @@
+{
+  "version": 1,
+  "nodes": {
+    "lms.exam": {
+      "reference": "lms.exam",
+      "schema": "lms",
+      "table": "exam",
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "marks",
+        "percentage",
+        "questions",
+        "answers",
+        "exam_duration",
+        "qualified",
+        "party_id",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "type_id",
+        "ut_id",
+        "status_id",
+        "no_of_questions",
+        "correct_answers_required",
+        "exam_questions"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.exam_type": {
+      "reference": "lms.exam_type",
+      "schema": "lms",
+      "table": "exam_type",
+      "columns": [
+        "id",
+        "name",
+        "description"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.lms_attachment": {
+      "reference": "lms.lms_attachment",
+      "schema": "lms",
+      "table": "lms_attachment",
+      "columns": [
+        "id",
+        "name",
+        "file_attachment",
+        "file_attachment_content_type",
+        "attachment_url",
+        "mime_type"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.lms_system_parameters": {
+      "reference": "lms.lms_system_parameters",
+      "schema": "lms",
+      "table": "lms_system_parameters",
+      "columns": [
+        "id",
+        "name",
+        "info",
+        "value",
+        "dept_id",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "training_id",
+        "category_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.status": {
+      "reference": "lms.status",
+      "schema": "lms",
+      "table": "status",
+      "columns": [
+        "id",
+        "name",
+        "sequence_no",
+        "description",
+        "type",
+        "category_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.status_category": {
+      "reference": "lms.status_category",
+      "schema": "lms",
+      "table": "status_category",
+      "columns": [
+        "id",
+        "name",
+        "description"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.sys_persistent_audit_event": {
+      "reference": "lms.sys_persistent_audit_event",
+      "schema": "lms",
+      "table": "sys_persistent_audit_event",
+      "columns": [
+        "event_id",
+        "principal",
+        "event_date",
+        "event_type"
+      ],
+      "primary_keys": [
+        "event_id"
+      ]
+    },
+    "lms.sys_persistent_audit_evt_data": {
+      "reference": "lms.sys_persistent_audit_evt_data",
+      "schema": "lms",
+      "table": "sys_persistent_audit_evt_data",
+      "columns": [
+        "event_id",
+        "name",
+        "value"
+      ],
+      "primary_keys": [
+        "event_id",
+        "name"
+      ]
+    },
+    "lms.time_logs": {
+      "reference": "lms.time_logs",
+      "schema": "lms",
+      "table": "time_logs",
+      "columns": [
+        "id",
+        "from_time",
+        "to_time",
+        "duration",
+        "info",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "type_id",
+        "training_tm_session_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.tm": {
+      "reference": "lms.tm",
+      "schema": "lms",
+      "table": "tm",
+      "columns": [
+        "id",
+        "name",
+        "sequence_no",
+        "description",
+        "training_duration",
+        "training_hours",
+        "training_mins",
+        "training_days",
+        "training_months",
+        "require_exam",
+        "no_of_questions",
+        "correct_answers_required",
+        "exam_questions",
+        "questions",
+        "jobcodes",
+        "info",
+        "attachment_url",
+        "is_sop",
+        "sop_number",
+        "version",
+        "effective_date",
+        "planned_date",
+        "thru_date",
+        "prev_sop",
+        "dept_id",
+        "dept_name",
+        "legacy",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "training_id",
+        "category_id",
+        "type_id",
+        "tr_type_id",
+        "status_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.tm_attachment": {
+      "reference": "lms.tm_attachment",
+      "schema": "lms",
+      "table": "tm_attachment",
+      "columns": [
+        "id",
+        "attachment_name",
+        "description",
+        "attachment_type",
+        "ext_id",
+        "content_type",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "tm_id",
+        "attachment_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.tm_job_code": {
+      "reference": "lms.tm_job_code",
+      "schema": "lms",
+      "table": "tm_job_code",
+      "columns": [
+        "id",
+        "from_date",
+        "thru_date",
+        "job_code_id",
+        "job_code",
+        "tm_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.tm_type": {
+      "reference": "lms.tm_type",
+      "schema": "lms",
+      "table": "tm_type",
+      "columns": [
+        "id",
+        "name",
+        "description"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.training": {
+      "reference": "lms.training",
+      "schema": "lms",
+      "table": "training",
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "doc_ref_no",
+        "sequence_no",
+        "training_hours",
+        "training_mins",
+        "training_days",
+        "training_months",
+        "require_exam",
+        "no_of_questions",
+        "exam_questions",
+        "correct_answers_required",
+        "schedule",
+        "questions",
+        "jobcodes",
+        "from_date",
+        "thru_date",
+        "start_date",
+        "end_date",
+        "is_exam_online",
+        "remarks",
+        "dept_id",
+        "dept_name",
+        "qr_code_id",
+        "parent",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "category_id",
+        "type_id",
+        "status_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.training_attachment": {
+      "reference": "lms.training_attachment",
+      "schema": "lms",
+      "table": "training_attachment",
+      "columns": [
+        "id",
+        "attachment_name",
+        "description",
+        "attachment_type",
+        "ext_id",
+        "content_type",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "training_id",
+        "attachment_id",
+        "training_duration",
+        "training_hours",
+        "training_mins"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.training_category": {
+      "reference": "lms.training_category",
+      "schema": "lms",
+      "table": "training_category",
+      "columns": [
+        "id",
+        "name",
+        "description"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.training_schedule": {
+      "reference": "lms.training_schedule",
+      "schema": "lms",
+      "table": "training_schedule",
+      "columns": [
+        "id",
+        "name",
+        "start_time",
+        "end_time",
+        "alert_time",
+        "tolerance_time",
+        "actual_start_time",
+        "actual_end_time",
+        "proposed_start_time",
+        "proposed_end_time",
+        "info",
+        "remarks",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "training_id",
+        "status_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.training_session": {
+      "reference": "lms.training_session",
+      "schema": "lms",
+      "table": "training_session",
+      "columns": [
+        "id",
+        "name",
+        "from_date",
+        "thru_date",
+        "actual_start_time",
+        "actual_end_time",
+        "training_hall",
+        "training_hall_capacity",
+        "is_online",
+        "remarks",
+        "trainer_id",
+        "trainer",
+        "facility_id",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "training_id",
+        "status_id",
+        "ut_id",
+        "ts_type_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.training_session_register": {
+      "reference": "lms.training_session_register",
+      "schema": "lms",
+      "table": "training_session_register",
+      "columns": [
+        "id",
+        "name",
+        "start_time",
+        "end_time",
+        "attended",
+        "exam_result",
+        "remarks",
+        "registration_time",
+        "cancelled_time",
+        "trainee_id",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "training_session_id",
+        "ut_id",
+        "status_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.training_tm": {
+      "reference": "lms.training_tm",
+      "schema": "lms",
+      "table": "training_tm",
+      "columns": [
+        "id",
+        "from_date",
+        "thru_date",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "training_id",
+        "tm_id",
+        "training_duration",
+        "training_hours",
+        "training_mins"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.training_type": {
+      "reference": "lms.training_type",
+      "schema": "lms",
+      "table": "training_type",
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "require_exam",
+        "exam_online",
+        "training_online"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "lms.user_training": {
+      "reference": "lms.user_training",
+      "schema": "lms",
+      "table": "user_training",
+      "columns": [
+        "id",
+        "from_date",
+        "thru_date",
+        "marks",
+        "percentage",
+        "start_time",
+        "end_time",
+        "info",
+        "remarks",
+        "attend_count",
+        "require_exam",
+        "logbook_no",
+        "read_time",
+        "party_id",
+        "emp_id",
+        "supervisor",
+        "user_dept",
+        "tr_dept",
+        "init_sop_tr",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "training_id",
+        "tm_id",
+        "training_tm_id",
+        "type_id",
+        "training_session_id",
+        "status_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.contact_mech_type": {
+      "reference": "masters.contact_mech_type",
+      "schema": "masters",
+      "table": "contact_mech_type",
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.job_code": {
+      "reference": "masters.job_code",
+      "schema": "masters",
+      "table": "job_code",
+      "columns": [
+        "id",
+        "name",
+        "code",
+        "responsibilities",
+        "description",
+        "dept_id",
+        "status",
+        "remarks",
+        "approved_by_user",
+        "returned_by_user",
+        "created_by_user"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.leave": {
+      "reference": "masters.leave",
+      "schema": "masters",
+      "table": "leave",
+      "columns": [
+        "id",
+        "from_date",
+        "thru_date",
+        "planned_thru_date",
+        "remarks",
+        "notes",
+        "type_id",
+        "party_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.mod": {
+      "reference": "masters.mod",
+      "schema": "masters",
+      "table": "mod",
+      "columns": [
+        "id",
+        "name",
+        "description"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.party": {
+      "reference": "masters.party",
+      "schema": "masters",
+      "table": "party",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "display_name",
+        "profile_picture",
+        "profile_picture_content_type",
+        "email",
+        "birthdate",
+        "notes",
+        "mobile_number",
+        "date_of_joining",
+        "training_completed_date",
+        "jd_approved_on",
+        "is_temporary_password",
+        "employee_id",
+        "auth_string",
+        "user_group_string",
+        "require_induction",
+        "nature_of_intro",
+        "exp",
+        "total_exp",
+        "on_long_leave",
+        "leave_date",
+        "rejoin_date",
+        "login_attempts",
+        "reset_remarks",
+        "reactivate_time",
+        "force_password_change",
+        "prev_emp",
+        "education",
+        "token",
+        "ip",
+        "session_id",
+        "exit_date",
+        "reset_by_user_id",
+        "user_id",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "status_id",
+        "party_type_id",
+        "preferred_language_id",
+        "gender_id",
+        "department_id",
+        "qr_code_id",
+        "require_ojt"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.party_job_code": {
+      "reference": "masters.party_job_code",
+      "schema": "masters",
+      "table": "party_job_code",
+      "columns": [
+        "id",
+        "from_date",
+        "thru_date",
+        "remarks",
+        "job_code_id",
+        "party_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.party_role": {
+      "reference": "masters.party_role",
+      "schema": "masters",
+      "table": "party_role",
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "role_type_id",
+        "party_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.party_type": {
+      "reference": "masters.party_type",
+      "schema": "masters",
+      "table": "party_type",
+      "columns": [
+        "id",
+        "name",
+        "description"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.permission": {
+      "reference": "masters.permission",
+      "schema": "masters",
+      "table": "permission",
+      "columns": [
+        "id",
+        "name",
+        "code",
+        "description",
+        "from_date",
+        "thru_date",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "mod_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.product_store": {
+      "reference": "masters.product_store",
+      "schema": "masters",
+      "table": "product_store",
+      "columns": [
+        "id",
+        "name",
+        "title",
+        "subtitle",
+        "image_url",
+        "require_induction",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "type_id",
+        "parent_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.product_store_type": {
+      "reference": "masters.product_store_type",
+      "schema": "masters",
+      "table": "product_store_type",
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.product_store_user_group": {
+      "reference": "masters.product_store_user_group",
+      "schema": "masters",
+      "table": "product_store_user_group",
+      "columns": [
+        "id",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "user_group_id",
+        "product_store_id",
+        "party_id",
+        "from_date",
+        "thru_date",
+        "remarks"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.request": {
+      "reference": "masters.request",
+      "schema": "masters",
+      "table": "request",
+      "columns": [
+        "id",
+        "name",
+        "info",
+        "comments",
+        "reviewed_time",
+        "approved_time",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "request_type_id",
+        "reviewed_by_id",
+        "approved_by_id",
+        "status_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.request_history": {
+      "reference": "masters.request_history",
+      "schema": "masters",
+      "table": "request_history",
+      "columns": [
+        "id",
+        "name",
+        "data",
+        "comments_1",
+        "comments_2",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "request_id",
+        "from_status_id",
+        "to_status_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.request_type": {
+      "reference": "masters.request_type",
+      "schema": "masters",
+      "table": "request_type",
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.role_type": {
+      "reference": "masters.role_type",
+      "schema": "masters",
+      "table": "role_type",
+      "columns": [
+        "id",
+        "name",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.security_group": {
+      "reference": "masters.security_group",
+      "schema": "masters",
+      "table": "security_group",
+      "columns": [
+        "id",
+        "name",
+        "code",
+        "from_date",
+        "thru_date",
+        "description",
+        "status_id",
+        "mod_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.security_group_permission": {
+      "reference": "masters.security_group_permission",
+      "schema": "masters",
+      "table": "security_group_permission",
+      "columns": [
+        "id",
+        "name",
+        "from_date",
+        "thru_date",
+        "description",
+        "group_id",
+        "permission_id",
+        "status_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.status": {
+      "reference": "masters.status",
+      "schema": "masters",
+      "table": "status",
+      "columns": [
+        "id",
+        "name",
+        "sequence_no",
+        "description",
+        "type",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "category_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.status_category": {
+      "reference": "masters.status_category",
+      "schema": "masters",
+      "table": "status_category",
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.sys_persistent_audit_event": {
+      "reference": "masters.sys_persistent_audit_event",
+      "schema": "masters",
+      "table": "sys_persistent_audit_event",
+      "columns": [
+        "event_id",
+        "principal",
+        "event_date",
+        "event_type"
+      ],
+      "primary_keys": [
+        "event_id"
+      ]
+    },
+    "masters.sys_persistent_audit_evt_data": {
+      "reference": "masters.sys_persistent_audit_evt_data",
+      "schema": "masters",
+      "table": "sys_persistent_audit_evt_data",
+      "columns": [
+        "event_id",
+        "name",
+        "value"
+      ],
+      "primary_keys": [
+        "event_id",
+        "name"
+      ]
+    },
+    "masters.system_parameters": {
+      "reference": "masters.system_parameters",
+      "schema": "masters",
+      "table": "system_parameters",
+      "columns": [
+        "id",
+        "name",
+        "info",
+        "value",
+        "comment_1",
+        "created_by",
+        "created_date",
+        "last_modified_by",
+        "last_modified_date",
+        "product_store_id",
+        "product_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "masters.user_security_group": {
+      "reference": "masters.user_security_group",
+      "schema": "masters",
+      "table": "user_security_group",
+      "columns": [
+        "id",
+        "name",
+        "from_date",
+        "thru_date",
+        "description",
+        "party_id",
+        "security_group_id",
+        "user_group_id",
+        "status_id"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "pc.sys_authority": {
+      "reference": "pc.sys_authority",
+      "schema": "pc",
+      "table": "sys_authority",
+      "columns": [
+        "name"
+      ],
+      "primary_keys": [
+        "name"
+      ]
+    },
+    "pc.sys_user": {
+      "reference": "pc.sys_user",
+      "schema": "pc",
+      "table": "sys_user",
+      "columns": [
+        "id",
+        "login",
+        "password_hash",
+        "first_name",
+        "last_name",
+        "email",
+        "image_url",
+        "activated",
+        "lang_key",
+        "activation_key",
+        "reset_key",
+        "created_by",
+        "created_date",
+        "reset_date",
+        "last_modified_by",
+        "last_modified_date",
+        "login_attempts",
+        "emp_id",
+        "is_temp_password",
+        "force_change_pwd"
+      ],
+      "primary_keys": [
+        "id"
+      ]
+    },
+    "pc.sys_user_authority": {
+      "reference": "pc.sys_user_authority",
+      "schema": "pc",
+      "table": "sys_user_authority",
+      "columns": [
+        "user_id",
+        "authority_name"
+      ],
+      "primary_keys": [
+        "user_id",
+        "authority_name"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "source_table": "lms.exam",
+      "source_column": "party_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "lms.exam",
+      "source_column": "status_id",
+      "target_table": "lms.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.exam",
+      "source_column": "type_id",
+      "target_table": "lms.exam_type",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.exam",
+      "source_column": "ut_id",
+      "target_table": "lms.user_training",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.lms_system_parameters",
+      "source_column": "category_id",
+      "target_table": "lms.training_category",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.lms_system_parameters",
+      "source_column": "training_id",
+      "target_table": "lms.training",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.status",
+      "source_column": "category_id",
+      "target_table": "lms.status_category",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.sys_persistent_audit_evt_data",
+      "source_column": "event_id",
+      "target_table": "lms.sys_persistent_audit_event",
+      "target_column": "event_id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.tm",
+      "source_column": "category_id",
+      "target_table": "lms.training_category",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.tm",
+      "source_column": "status_id",
+      "target_table": "lms.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.tm",
+      "source_column": "tr_type_id",
+      "target_table": "lms.training_type",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.tm",
+      "source_column": "training_id",
+      "target_table": "lms.training",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.tm",
+      "source_column": "type_id",
+      "target_table": "lms.tm_type",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.tm_attachment",
+      "source_column": "attachment_id",
+      "target_table": "lms.lms_attachment",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.tm_attachment",
+      "source_column": "tm_id",
+      "target_table": "lms.tm",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.tm_job_code",
+      "source_column": "job_code_id",
+      "target_table": "masters.job_code",
+      "target_column": "id",
+      "edge_type": "inferred_foreign_key"
+    },
+    {
+      "source_table": "lms.tm_job_code",
+      "source_column": "tm_id",
+      "target_table": "lms.tm",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training",
+      "source_column": "category_id",
+      "target_table": "lms.training_category",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training",
+      "source_column": "status_id",
+      "target_table": "lms.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training",
+      "source_column": "type_id",
+      "target_table": "lms.training_type",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_attachment",
+      "source_column": "attachment_id",
+      "target_table": "lms.lms_attachment",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_attachment",
+      "source_column": "training_id",
+      "target_table": "lms.training",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_schedule",
+      "source_column": "status_id",
+      "target_table": "lms.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_schedule",
+      "source_column": "training_id",
+      "target_table": "lms.training",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_session",
+      "source_column": "status_id",
+      "target_table": "lms.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_session",
+      "source_column": "training_id",
+      "target_table": "lms.training",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_session_register",
+      "source_column": "status_id",
+      "target_table": "lms.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_session_register",
+      "source_column": "training_session_id",
+      "target_table": "lms.training_session",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_session_register",
+      "source_column": "ut_id",
+      "target_table": "lms.user_training",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_tm",
+      "source_column": "tm_id",
+      "target_table": "lms.tm",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.training_tm",
+      "source_column": "training_id",
+      "target_table": "lms.training",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.user_training",
+      "source_column": "party_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.user_training",
+      "source_column": "status_id",
+      "target_table": "lms.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.user_training",
+      "source_column": "tm_id",
+      "target_table": "lms.tm",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.user_training",
+      "source_column": "training_id",
+      "target_table": "lms.training",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.user_training",
+      "source_column": "training_session_id",
+      "target_table": "lms.training_session",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.user_training",
+      "source_column": "training_tm_id",
+      "target_table": "lms.training_tm",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "lms.user_training",
+      "source_column": "type_id",
+      "target_table": "lms.training_type",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.job_code",
+      "source_column": "dept_id",
+      "target_table": "masters.product_store",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.leave",
+      "source_column": "party_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "department_id",
+      "target_table": "masters.product_store",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "party_type_id",
+      "target_table": "masters.party_type",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "status_id",
+      "target_table": "masters.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "user_id",
+      "target_table": "pc.sys_user",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.party_job_code",
+      "source_column": "job_code_id",
+      "target_table": "masters.job_code",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.party_job_code",
+      "source_column": "party_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.party_role",
+      "source_column": "party_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.party_role",
+      "source_column": "role_type_id",
+      "target_table": "masters.role_type",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.permission",
+      "source_column": "mod_id",
+      "target_table": "masters.mod",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.product_store",
+      "source_column": "parent_id",
+      "target_table": "masters.product_store",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.product_store",
+      "source_column": "type_id",
+      "target_table": "masters.product_store_type",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.product_store_user_group",
+      "source_column": "party_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.product_store_user_group",
+      "source_column": "product_store_id",
+      "target_table": "masters.product_store",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.request",
+      "source_column": "approved_by_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.request",
+      "source_column": "request_type_id",
+      "target_table": "masters.request_type",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.request",
+      "source_column": "reviewed_by_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.request",
+      "source_column": "status_id",
+      "target_table": "masters.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.request_history",
+      "source_column": "from_status_id",
+      "target_table": "masters.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.request_history",
+      "source_column": "request_id",
+      "target_table": "masters.request",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.request_history",
+      "source_column": "to_status_id",
+      "target_table": "masters.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.security_group",
+      "source_column": "mod_id",
+      "target_table": "masters.mod",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.security_group",
+      "source_column": "status_id",
+      "target_table": "masters.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.security_group_permission",
+      "source_column": "group_id",
+      "target_table": "masters.security_group",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.security_group_permission",
+      "source_column": "permission_id",
+      "target_table": "masters.permission",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.security_group_permission",
+      "source_column": "status_id",
+      "target_table": "masters.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.status",
+      "source_column": "category_id",
+      "target_table": "masters.status_category",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.sys_persistent_audit_evt_data",
+      "source_column": "event_id",
+      "target_table": "masters.sys_persistent_audit_event",
+      "target_column": "event_id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.system_parameters",
+      "source_column": "product_store_id",
+      "target_table": "masters.product_store",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.user_security_group",
+      "source_column": "party_id",
+      "target_table": "masters.party",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.user_security_group",
+      "source_column": "security_group_id",
+      "target_table": "masters.security_group",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "masters.user_security_group",
+      "source_column": "status_id",
+      "target_table": "masters.status",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "pc.sys_user_authority",
+      "source_column": "authority_name",
+      "target_table": "pc.sys_authority",
+      "target_column": "name",
+      "edge_type": "foreign_key"
+    },
+    {
+      "source_table": "pc.sys_user_authority",
+      "source_column": "user_id",
+      "target_table": "pc.sys_user",
+      "target_column": "id",
+      "edge_type": "foreign_key"
+    }
+  ],
+  "adjacency": {
+    "lms.exam": {
+      "outgoing": [
+        {
+          "source_table": "lms.exam",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "inferred_foreign_key"
+        },
+        {
+          "source_table": "lms.exam",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.exam",
+          "source_column": "type_id",
+          "target_table": "lms.exam_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.exam",
+          "source_column": "ut_id",
+          "target_table": "lms.user_training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "lms.exam_type": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "lms.exam",
+          "source_column": "type_id",
+          "target_table": "lms.exam_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.lms_attachment": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "lms.tm_attachment",
+          "source_column": "attachment_id",
+          "target_table": "lms.lms_attachment",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_attachment",
+          "source_column": "attachment_id",
+          "target_table": "lms.lms_attachment",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.lms_system_parameters": {
+      "outgoing": [
+        {
+          "source_table": "lms.lms_system_parameters",
+          "source_column": "category_id",
+          "target_table": "lms.training_category",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.lms_system_parameters",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "lms.status": {
+      "outgoing": [
+        {
+          "source_table": "lms.status",
+          "source_column": "category_id",
+          "target_table": "lms.status_category",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "lms.exam",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.tm",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_schedule",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_session",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_session_register",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.status_category": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "lms.status",
+          "source_column": "category_id",
+          "target_table": "lms.status_category",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.sys_persistent_audit_event": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "lms.sys_persistent_audit_evt_data",
+          "source_column": "event_id",
+          "target_table": "lms.sys_persistent_audit_event",
+          "target_column": "event_id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.sys_persistent_audit_evt_data": {
+      "outgoing": [
+        {
+          "source_table": "lms.sys_persistent_audit_evt_data",
+          "source_column": "event_id",
+          "target_table": "lms.sys_persistent_audit_event",
+          "target_column": "event_id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "lms.time_logs": {
+      "outgoing": [],
+      "incoming": []
+    },
+    "lms.tm": {
+      "outgoing": [
+        {
+          "source_table": "lms.tm",
+          "source_column": "category_id",
+          "target_table": "lms.training_category",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.tm",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.tm",
+          "source_column": "tr_type_id",
+          "target_table": "lms.training_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.tm",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.tm",
+          "source_column": "type_id",
+          "target_table": "lms.tm_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "lms.tm_attachment",
+          "source_column": "tm_id",
+          "target_table": "lms.tm",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.tm_job_code",
+          "source_column": "tm_id",
+          "target_table": "lms.tm",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_tm",
+          "source_column": "tm_id",
+          "target_table": "lms.tm",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "tm_id",
+          "target_table": "lms.tm",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.tm_attachment": {
+      "outgoing": [
+        {
+          "source_table": "lms.tm_attachment",
+          "source_column": "attachment_id",
+          "target_table": "lms.lms_attachment",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.tm_attachment",
+          "source_column": "tm_id",
+          "target_table": "lms.tm",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "lms.tm_job_code": {
+      "outgoing": [
+        {
+          "source_table": "lms.tm_job_code",
+          "source_column": "job_code_id",
+          "target_table": "masters.job_code",
+          "target_column": "id",
+          "edge_type": "inferred_foreign_key"
+        },
+        {
+          "source_table": "lms.tm_job_code",
+          "source_column": "tm_id",
+          "target_table": "lms.tm",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "lms.tm_type": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "lms.tm",
+          "source_column": "type_id",
+          "target_table": "lms.tm_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.training": {
+      "outgoing": [
+        {
+          "source_table": "lms.training",
+          "source_column": "category_id",
+          "target_table": "lms.training_category",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training",
+          "source_column": "type_id",
+          "target_table": "lms.training_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "lms.lms_system_parameters",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.tm",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_attachment",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_schedule",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_session",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_tm",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.training_attachment": {
+      "outgoing": [
+        {
+          "source_table": "lms.training_attachment",
+          "source_column": "attachment_id",
+          "target_table": "lms.lms_attachment",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_attachment",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "lms.training_category": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "lms.lms_system_parameters",
+          "source_column": "category_id",
+          "target_table": "lms.training_category",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.tm",
+          "source_column": "category_id",
+          "target_table": "lms.training_category",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training",
+          "source_column": "category_id",
+          "target_table": "lms.training_category",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.training_schedule": {
+      "outgoing": [
+        {
+          "source_table": "lms.training_schedule",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_schedule",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "lms.training_session": {
+      "outgoing": [
+        {
+          "source_table": "lms.training_session",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_session",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "lms.training_session_register",
+          "source_column": "training_session_id",
+          "target_table": "lms.training_session",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "training_session_id",
+          "target_table": "lms.training_session",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.training_session_register": {
+      "outgoing": [
+        {
+          "source_table": "lms.training_session_register",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_session_register",
+          "source_column": "training_session_id",
+          "target_table": "lms.training_session",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_session_register",
+          "source_column": "ut_id",
+          "target_table": "lms.user_training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "lms.training_tm": {
+      "outgoing": [
+        {
+          "source_table": "lms.training_tm",
+          "source_column": "tm_id",
+          "target_table": "lms.tm",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_tm",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "lms.user_training",
+          "source_column": "training_tm_id",
+          "target_table": "lms.training_tm",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.training_type": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "lms.tm",
+          "source_column": "tr_type_id",
+          "target_table": "lms.training_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training",
+          "source_column": "type_id",
+          "target_table": "lms.training_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "type_id",
+          "target_table": "lms.training_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "lms.user_training": {
+      "outgoing": [
+        {
+          "source_table": "lms.user_training",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "status_id",
+          "target_table": "lms.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "tm_id",
+          "target_table": "lms.tm",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "training_id",
+          "target_table": "lms.training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "training_session_id",
+          "target_table": "lms.training_session",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "training_tm_id",
+          "target_table": "lms.training_tm",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "type_id",
+          "target_table": "lms.training_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "lms.exam",
+          "source_column": "ut_id",
+          "target_table": "lms.user_training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "lms.training_session_register",
+          "source_column": "ut_id",
+          "target_table": "lms.user_training",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.contact_mech_type": {
+      "outgoing": [],
+      "incoming": []
+    },
+    "masters.job_code": {
+      "outgoing": [
+        {
+          "source_table": "masters.job_code",
+          "source_column": "dept_id",
+          "target_table": "masters.product_store",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "lms.tm_job_code",
+          "source_column": "job_code_id",
+          "target_table": "masters.job_code",
+          "target_column": "id",
+          "edge_type": "inferred_foreign_key"
+        },
+        {
+          "source_table": "masters.party_job_code",
+          "source_column": "job_code_id",
+          "target_table": "masters.job_code",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.leave": {
+      "outgoing": [
+        {
+          "source_table": "masters.leave",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "masters.mod": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "masters.permission",
+          "source_column": "mod_id",
+          "target_table": "masters.mod",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.security_group",
+          "source_column": "mod_id",
+          "target_table": "masters.mod",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.party": {
+      "outgoing": [
+        {
+          "source_table": "masters.party",
+          "source_column": "department_id",
+          "target_table": "masters.product_store",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.party",
+          "source_column": "party_type_id",
+          "target_table": "masters.party_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.party",
+          "source_column": "status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.party",
+          "source_column": "user_id",
+          "target_table": "pc.sys_user",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "lms.exam",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "inferred_foreign_key"
+        },
+        {
+          "source_table": "lms.user_training",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.leave",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.party_job_code",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.party_role",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.product_store_user_group",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.request",
+          "source_column": "approved_by_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.request",
+          "source_column": "reviewed_by_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.user_security_group",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.party_job_code": {
+      "outgoing": [
+        {
+          "source_table": "masters.party_job_code",
+          "source_column": "job_code_id",
+          "target_table": "masters.job_code",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.party_job_code",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "masters.party_role": {
+      "outgoing": [
+        {
+          "source_table": "masters.party_role",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.party_role",
+          "source_column": "role_type_id",
+          "target_table": "masters.role_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "masters.party_type": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "masters.party",
+          "source_column": "party_type_id",
+          "target_table": "masters.party_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.permission": {
+      "outgoing": [
+        {
+          "source_table": "masters.permission",
+          "source_column": "mod_id",
+          "target_table": "masters.mod",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "masters.security_group_permission",
+          "source_column": "permission_id",
+          "target_table": "masters.permission",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.product_store": {
+      "outgoing": [
+        {
+          "source_table": "masters.product_store",
+          "source_column": "parent_id",
+          "target_table": "masters.product_store",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.product_store",
+          "source_column": "type_id",
+          "target_table": "masters.product_store_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "masters.job_code",
+          "source_column": "dept_id",
+          "target_table": "masters.product_store",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.party",
+          "source_column": "department_id",
+          "target_table": "masters.product_store",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.product_store",
+          "source_column": "parent_id",
+          "target_table": "masters.product_store",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.product_store_user_group",
+          "source_column": "product_store_id",
+          "target_table": "masters.product_store",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.system_parameters",
+          "source_column": "product_store_id",
+          "target_table": "masters.product_store",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.product_store_type": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "masters.product_store",
+          "source_column": "type_id",
+          "target_table": "masters.product_store_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.product_store_user_group": {
+      "outgoing": [
+        {
+          "source_table": "masters.product_store_user_group",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.product_store_user_group",
+          "source_column": "product_store_id",
+          "target_table": "masters.product_store",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "masters.request": {
+      "outgoing": [
+        {
+          "source_table": "masters.request",
+          "source_column": "approved_by_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.request",
+          "source_column": "request_type_id",
+          "target_table": "masters.request_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.request",
+          "source_column": "reviewed_by_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.request",
+          "source_column": "status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "masters.request_history",
+          "source_column": "request_id",
+          "target_table": "masters.request",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.request_history": {
+      "outgoing": [
+        {
+          "source_table": "masters.request_history",
+          "source_column": "from_status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.request_history",
+          "source_column": "request_id",
+          "target_table": "masters.request",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.request_history",
+          "source_column": "to_status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "masters.request_type": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "masters.request",
+          "source_column": "request_type_id",
+          "target_table": "masters.request_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.role_type": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "masters.party_role",
+          "source_column": "role_type_id",
+          "target_table": "masters.role_type",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.security_group": {
+      "outgoing": [
+        {
+          "source_table": "masters.security_group",
+          "source_column": "mod_id",
+          "target_table": "masters.mod",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.security_group",
+          "source_column": "status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "masters.security_group_permission",
+          "source_column": "group_id",
+          "target_table": "masters.security_group",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.user_security_group",
+          "source_column": "security_group_id",
+          "target_table": "masters.security_group",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.security_group_permission": {
+      "outgoing": [
+        {
+          "source_table": "masters.security_group_permission",
+          "source_column": "group_id",
+          "target_table": "masters.security_group",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.security_group_permission",
+          "source_column": "permission_id",
+          "target_table": "masters.permission",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.security_group_permission",
+          "source_column": "status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "masters.status": {
+      "outgoing": [
+        {
+          "source_table": "masters.status",
+          "source_column": "category_id",
+          "target_table": "masters.status_category",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": [
+        {
+          "source_table": "masters.party",
+          "source_column": "status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.request",
+          "source_column": "status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.request_history",
+          "source_column": "from_status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.request_history",
+          "source_column": "to_status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.security_group",
+          "source_column": "status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.security_group_permission",
+          "source_column": "status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.user_security_group",
+          "source_column": "status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.status_category": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "masters.status",
+          "source_column": "category_id",
+          "target_table": "masters.status_category",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.sys_persistent_audit_event": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "masters.sys_persistent_audit_evt_data",
+          "source_column": "event_id",
+          "target_table": "masters.sys_persistent_audit_event",
+          "target_column": "event_id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "masters.sys_persistent_audit_evt_data": {
+      "outgoing": [
+        {
+          "source_table": "masters.sys_persistent_audit_evt_data",
+          "source_column": "event_id",
+          "target_table": "masters.sys_persistent_audit_event",
+          "target_column": "event_id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "masters.system_parameters": {
+      "outgoing": [
+        {
+          "source_table": "masters.system_parameters",
+          "source_column": "product_store_id",
+          "target_table": "masters.product_store",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "masters.user_security_group": {
+      "outgoing": [
+        {
+          "source_table": "masters.user_security_group",
+          "source_column": "party_id",
+          "target_table": "masters.party",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.user_security_group",
+          "source_column": "security_group_id",
+          "target_table": "masters.security_group",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "masters.user_security_group",
+          "source_column": "status_id",
+          "target_table": "masters.status",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    },
+    "pc.sys_authority": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "pc.sys_user_authority",
+          "source_column": "authority_name",
+          "target_table": "pc.sys_authority",
+          "target_column": "name",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "pc.sys_user": {
+      "outgoing": [],
+      "incoming": [
+        {
+          "source_table": "masters.party",
+          "source_column": "user_id",
+          "target_table": "pc.sys_user",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "pc.sys_user_authority",
+          "source_column": "user_id",
+          "target_table": "pc.sys_user",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ]
+    },
+    "pc.sys_user_authority": {
+      "outgoing": [
+        {
+          "source_table": "pc.sys_user_authority",
+          "source_column": "authority_name",
+          "target_table": "pc.sys_authority",
+          "target_column": "name",
+          "edge_type": "foreign_key"
+        },
+        {
+          "source_table": "pc.sys_user_authority",
+          "source_column": "user_id",
+          "target_table": "pc.sys_user",
+          "target_column": "id",
+          "edge_type": "foreign_key"
+        }
+      ],
+      "incoming": []
+    }
+  },
+  "unresolved_fks": [
+    {
+      "source_table": "masters.party",
+      "source_column": "gender_id",
+      "raw_target": "public.gender",
+      "target_column": "id"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "preferred_language_id",
+      "raw_target": "public.language",
+      "target_column": "id"
+    },
+    {
+      "source_table": "masters.party",
+      "source_column": "qr_code_id",
+      "raw_target": "public.qr_code",
+      "target_column": "id"
+    },
+    {
+      "source_table": "masters.product_store_user_group",
+      "source_column": "user_group_id",
+      "raw_target": "public.user_group",
+      "target_column": "id"
+    },
+    {
+      "source_table": "masters.leave",
+      "source_column": "type_id",
+      "raw_target": "public.leave_type",
+      "target_column": "id"
+    },
+    {
+      "source_table": "masters.system_parameters",
+      "source_column": "product_id",
+      "raw_target": "public.product",
+      "target_column": "id"
+    },
+    {
+      "source_table": "masters.user_security_group",
+      "source_column": "user_group_id",
+      "raw_target": "public.user_group",
+      "target_column": "id"
+    },
+    {
+      "source_table": "lms.training_session",
+      "source_column": "ts_type_id",
+      "raw_target": "public.training_session_type",
+      "target_column": "id"
+    },
+    {
+      "source_table": "lms.time_logs",
+      "source_column": "type_id",
+      "raw_target": "public.log_type",
+      "target_column": "id"
+    },
+    {
+      "source_table": "lms.time_logs",
+      "source_column": "training_tm_session_id",
+      "raw_target": "public.training_tm_session",
+      "target_column": "id"
+    }
+  ],
+  "ambiguous_fks": [],
+  "schema_tiebreak_fks": [
+    {
+      "source_table": "masters.party",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "masters.status"
+    },
+    {
+      "source_table": "masters.security_group_permission",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "masters.status"
+    },
+    {
+      "source_table": "masters.status",
+      "source_column": "category_id",
+      "raw_target": "public.status_category",
+      "target_column": "id",
+      "candidates": [
+        "masters.status_category",
+        "lms.status_category"
+      ],
+      "resolved_to": "masters.status_category"
+    },
+    {
+      "source_table": "masters.sys_persistent_audit_evt_data",
+      "source_column": "event_id",
+      "raw_target": "public.sys_persistent_audit_event",
+      "target_column": "event_id",
+      "candidates": [
+        "masters.sys_persistent_audit_event",
+        "lms.sys_persistent_audit_event"
+      ],
+      "resolved_to": "masters.sys_persistent_audit_event"
+    },
+    {
+      "source_table": "masters.security_group",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "masters.status"
+    },
+    {
+      "source_table": "masters.request_history",
+      "source_column": "from_status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "masters.status"
+    },
+    {
+      "source_table": "masters.request_history",
+      "source_column": "to_status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "masters.status"
+    },
+    {
+      "source_table": "masters.request",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "masters.status"
+    },
+    {
+      "source_table": "masters.user_security_group",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "masters.status"
+    },
+    {
+      "source_table": "lms.status",
+      "source_column": "category_id",
+      "raw_target": "public.status_category",
+      "target_column": "id",
+      "candidates": [
+        "masters.status_category",
+        "lms.status_category"
+      ],
+      "resolved_to": "lms.status_category"
+    },
+    {
+      "source_table": "lms.training_schedule",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "lms.status"
+    },
+    {
+      "source_table": "lms.training",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "lms.status"
+    },
+    {
+      "source_table": "lms.tm",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "lms.status"
+    },
+    {
+      "source_table": "lms.training_session",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "lms.status"
+    },
+    {
+      "source_table": "lms.user_training",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "lms.status"
+    },
+    {
+      "source_table": "lms.exam",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "lms.status"
+    },
+    {
+      "source_table": "lms.training_session_register",
+      "source_column": "status_id",
+      "raw_target": "public.status",
+      "target_column": "id",
+      "candidates": [
+        "masters.status",
+        "lms.status"
+      ],
+      "resolved_to": "lms.status"
+    },
+    {
+      "source_table": "lms.sys_persistent_audit_evt_data",
+      "source_column": "event_id",
+      "raw_target": "public.sys_persistent_audit_event",
+      "target_column": "event_id",
+      "candidates": [
+        "masters.sys_persistent_audit_event",
+        "lms.sys_persistent_audit_event"
+      ],
+      "resolved_to": "lms.sys_persistent_audit_event"
+    }
+  ]
+}
